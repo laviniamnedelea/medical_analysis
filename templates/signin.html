@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adaugare Utilizator</title>
+    <style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: black;
+}
+
+.topnav a {
+  float: left;
+  color: grey;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.topnav a:hover {
+  background-color: Grey;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #016A5C;
+  color: white;
+}
+</style>
+</head>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+<body>
+<div class="topnav">
+  <a class="active" href="/">Acasa</a>
+  <a href="/cont">Contul meu</a>
+  <a href="#contact">Contact</a>
+  <a href="#about">Despre noi</a>
+</div>
+<h1> Gestiunea analizelor medicale</h1>
+<br>
+<br>
+
+<h2>Sign In</h2>
+<form method="POST" name ="Sign In" action ="">
+    Nume <input type="text" name="nume"/>
+    <br>
+    Prenume <input type="text" name="prenume"/>
+    <br>
+    CNP<input type="text" name="cnp"/>
+    <br>
+    Numar Telefon<input type="text" name="numar_telefon"/>
+    <br>
+    Email <input type="text" name="email"/>
+    <br>
+    Parola <input type="password" name="parola"/>
+    <br>
+    Data nastere<input type="date" name="data"/>
+    <br>
+    <label for="sex">Sex:</label>
+    <select id="sex" name="sex">
+    <option value="F">Feminin</option>
+    <option value="M">Masculin</option>
+    <option value="N">Non-binar</option>
+    <option value="X">Prefer sa nu spun</option>
+  </select>
+    <br>
+    Istoric <input type="text" name="istoric"/>
+    <br>
+  <label for="modalitate_plata">Modalitate plata:</label>
+    <select id="modalitate_plata" name="modalitate_plata">
+    <option value="Card bancar">Card bancar</option>
+    <option value="Cash">Cash</option>
+    <option value="Voucher">Voucher</option>
+    <option value="Asigurare">Asigurare</option>
+    <br>
+    </select>
+    <input type = "submit">
+
+</form>
+</body>
+</html>
