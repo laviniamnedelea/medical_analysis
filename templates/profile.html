@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+   <head>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -333,51 +334,40 @@ body {
   background-color: #016A5C;
   color: white;
 }
-
 </style>
 </head>
 <body>
+{% extends 'layout.html' %}
 
+{% block title %}Profil{% endblock %}
 
-<div class="topnav">
-  <a class="active" href="/">Acasa</a>
-  <a href="/login">Contul meu</a>
-  <a href="#contact">Contact</a>
-  <a href="#about">Despre noi</a>
-    <a href="/login/logout">Log out</a>
+{% block content %}
+<h2>Profil</h2>
+
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-grey">
+<div>
+    <p>Detaliile contului:</p>
+    <table>
+        <tr>
+            <td>Nume:</td>
+            <td>{{ account['Nume'] }}</td>
+        </tr>
+         <tr>
+            <td>Prenume:</td>
+            <td>{{ account['Prenume'] }}</td>
+        </tr>
+        <tr>
+            <td>Parola:</td>
+            <td>{{ account['Parola'] }}</td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td>{{ account['Email'] }}</td>
+        </tr>
+    </table>
+</div>
 </div>
 
-
-<div class="wrapper fadeInDown">
-  <div id="formContent">
-<!-- Tabs Titles -->
-
-<!-- Icon -->
-<div class="fadeIn first">
-  <img src="https://www.flaticon.com/premium-icon/icons/svg/881/881760.svg" id="icon" alt="Icon" />
-</div>
-
-
-<form action="{{ url_for('index') }}" method="POST">
-<br><br> <p input type="text" class="fadeIn first"> Log in</p>
-	<input type="text" id="email" class="fadeIn second" name="email" placeholder="email">
-  <input type="password" id="parola" class="fadeIn third" name="parola" placeholder="parola">
-  <input type="submit" class="fadeIn fourth" name="submit_button"  value="Log In">
-	  <input type="submit" class = "fadeIn fourth" name="submit_button" value="Sign In">
-<br> <br>
-</form>
-
-<div class="msg">{{ msg }}</div>
-            <br><br>
-
-<!-- Remind Passowrd -->
-<div id="formFooter">
-  <a class="underlineHover" href="#">Ati uitat parola?</a>
-</div>
-
-  </div>
-</div>
-
+{% endblock %}
 </body>
 </html>
-
