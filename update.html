@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<style>
+/* BASIC */
+
+body, html {height: 100%}
+
+.bgimg {
+  background-image: url('https://thesweetsetup.com/wp-content/uploads/2015/02/mountain-bg-2880x1800.png');
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+/* STRUCTURE */
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  min-height: 100%;
+  padding: 20px;
+}
+
+/* FORM TYPOGRAPHY*/
+
+input[type=button], input[type=submit], input[type=reset]  {
+  background-color: #56baed;
+  border: none;
+  color: white;
+  padding: 15px 80px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 13px;
+  -webkit-box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+  box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+  margin: 5px 20px 40px 20px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+
+input[type=button]:active, input[type=submit]:active, input[type=reset]:active  {
+  -moz-transform: scale(0.95);
+  -webkit-transform: scale(0.95);
+  -o-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  transform: scale(0.95);
+}
+
+/* ANIMATIONS */
+
+.fadeIn {
+  opacity:0;
+  -webkit-animation:fadeIn ease-in 1;
+  -moz-animation:fadeIn ease-in 1;
+  animation:fadeIn ease-in 1;
+
+  -webkit-animation-fill-mode:forwards;
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+
+  -webkit-animation-duration:1s;
+  -moz-animation-duration:1s;
+  animation-duration:1s;
+}
+
+.fadeIn.first {
+  -webkit-animation-delay: 0.2s;
+  -moz-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+
+/* Simple CSS3 Fade-in Animation */
+.underlineHover:after {
+  display: block;
+  left: 0;
+  bottom: -10px;
+  width: 0;
+  height: 2px;
+  background-color: #56baed;
+  content: "";
+  transition: width 0.2s;
+}
+
+.underlineHover:hover {
+  color: #0d0d0d;
+}
+
+.underlineHover:hover:after{
+  width: 100%;
+}
+
+
+/* OTHERS */
+
+*:focus {
+outline: none;
+}
+
+#icon {
+  width:17%;
+}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: black;
+}
+
+.topnav a {
+  float: left;
+  color: grey;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.topnav a:hover {
+  background-color: Grey;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #016A5C;
+  color: white;
+}
+<div class="container h-100">
+      <div class="d-flex justify-content-center h-100">
+        <div class="searchbar">
+          <input class="search_input" type="text" name="" placeholder="Search...">
+          <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+        </div>
+      </div>
+    </div>
+
+th, td {
+text-align: left;
+  padding: 5px;
+}
+th {
+  text-align: left;
+}
+
+.div1 {
+  width: 100px;
+  height: 40px;
+  border: 1px solid blue;
+}
+
+</style>
+</head>
+<body>
+<div class="topnav">
+<!--    Search bar cu filtre-->
+  <a class="active" href="/">Start Page</a>
+  <a href="/utilizatori">Utilizatori</a>
+<!--    Aici adaugam utilizatori sau stergem utilizatori de mana-->
+  <a href="/analize">Solicitare analiza</a>
+<!--    #rez analize + update analize + stergere analiza-->
+  <a href="#/centre">Adaugare rezultat</a>
+<!--    # modificare informatii centre-->
+</div>
+
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+   <center><p style="color:white">Veti modifica userul cu CNP-ul: {{cnp}}</p></center>
+    <p class="container">
+        <p align = "left">
+<table style="color : grey " class="table">
+            <tr>
+            <th>Nume</th>
+                <th>Prenume</th>
+                <th>Email</th>
+                <th>CNP</th>
+                <th>Numar Telefon</th>
+                <th>Data Nastere</th>
+                <th>Sex</th>
+                <th>Istoric</th>
+                <th>Modalitate plata</th>
+                <th>Rezultat</th>
+                <th>Necesita refacere</th>
+                <th>Analiza</th>
+            <tr>
+
+            {%for i in data %}
+            </tr>
+                <tr>
+
+                <td > {{i.Nume}}</td>
+                <td>{{i.Prenume}}</td>
+                <td>{{i.Email}}</td>
+                <td>{{i.CNP}}</td>
+                <td>{{i.Numar_telefon}}</td>
+                <td>{{i.Data_nastere}}</td>
+                <td>{{i.Sex}}</td>
+                <td>{{i.Istoric}}</td>
+                <td>{{i.Modalitate_Plata}}</td>
+                <td>{{i.Rezultat}}</td>
+                <td>{{i.Necesita_refacere}}</td>
+                <td>{{i.Descriere}}</td>
+            </tr>
+</table>
+    </p>
+<!--                <tr>-->
+
+<!--                <td > <input type = "POST" name="nume" class="div1"></td>-->
+<!--                <td > <input type = "POST" name="prenume" class="div1"></td>-->
+<!--                <td > <input type = "POST" name="email" class="div1"></td>-->
+<!--                <td > <input type = "POST" name="CNP" class="div1" ></td>-->
+<!--                <td > <input type = "POST" name="numar_telefon" class="div1"></td>-->
+<!--                <td > <input type = "POST" name="data_nastere" class="div1"></td>-->
+<!--                <td > <input type = "POST" name="sex" class="div1"></td>-->
+<!--                <td > <input type = "POST" name="istoric" class="div1"></td>-->
+<!--                <td > <input type = "POST" name="plata" class="div1"></td>-->
+<!--                <td > <input type = "POST" name="rezultat" class="div1"></td>-->
+<!--                <td > <input type = "POST" name="refacere" class="div1"></td>-->
+<!--                <td > <input type = "POST" name="descriere" class="div1"></td>-->
+<!--            </tr>-->
+            {%endfor%}
+<!-- Tabs Titles -->
+      <br>
+<center>
+<form method="POST" name ="Sign In"  action ="" style="color : white">
+    Email <i ></i>
+    <br>
+    <input type="email"  name="email"  />
+    <br>
+
+    Nume
+    <br><input type="text"   name="nume" />
+    <br>
+
+    Prenume<br> <input type="text" name="prenume" />
+    <br>
+
+    Numar Telefon<br><input type="tel"  name="numar_telefon" />
+    <br>
+
+    Data nastere<br><input type="date"   name="data" />
+    <br>
+    <label for="sex" >Sex:</label> <br>
+    <select id="sex" name="sex">
+    <option value="F">Feminin</option>
+    <option value="M">Masculin</option>
+    <option value="N">Non-binar</option>
+    <option value="X">Prefer sa nu spun</option>
+  </select>
+    <br>
+    Istoric <br><input type="text"  name="istoric"/><br>
+    <br>
+  <label for="modalitate_plata">Modalitate plata:</label><br>
+    <select id="modalitate_plata" name="modalitate_plata">
+    <option value="Card bancar">Card bancar</option>
+    <option value="Cash">Cash</option>
+    <option value="Voucher">Voucher</option>
+    <option value="Asigurare">Asigurare</option>
+    </select>
+    <br><br>
+    <input type = "submit">
+</form>
+      <div class="msg">{{ msg }}</div>
+            <br><br>
+</center>
+</div>
+</body>
+</html>
+
+
+

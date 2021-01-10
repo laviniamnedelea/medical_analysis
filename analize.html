@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<style>
+/* BASIC */
+
+body, html {height: 100%}
+
+.bgimg {
+  background-image: url('https://thesweetsetup.com/wp-content/uploads/2015/02/mountain-bg-2880x1800.png');
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+/* STRUCTURE */
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  min-height: 100%;
+  padding: 20px;
+}
+
+/* FORM TYPOGRAPHY*/
+
+input[type=button], input[type=submit], input[type=reset]  {
+  background-color: #56baed;
+  border: none;
+  color: white;
+  padding: 15px 80px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 13px;
+  -webkit-box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+  box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+  margin: 5px 20px 40px 20px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+
+input[type=button]:active, input[type=submit]:active, input[type=reset]:active  {
+  -moz-transform: scale(0.95);
+  -webkit-transform: scale(0.95);
+  -o-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  transform: scale(0.95);
+}
+
+/* ANIMATIONS */
+
+.fadeIn {
+  opacity:0;
+  -webkit-animation:fadeIn ease-in 1;
+  -moz-animation:fadeIn ease-in 1;
+  animation:fadeIn ease-in 1;
+
+  -webkit-animation-fill-mode:forwards;
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+
+  -webkit-animation-duration:1s;
+  -moz-animation-duration:1s;
+  animation-duration:1s;
+}
+
+.fadeIn.first {
+  -webkit-animation-delay: 0.2s;
+  -moz-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+
+/* Simple CSS3 Fade-in Animation */
+.underlineHover:after {
+  display: block;
+  left: 0;
+  bottom: -10px;
+  width: 0;
+  height: 2px;
+  background-color: #56baed;
+  content: "";
+  transition: width 0.2s;
+}
+
+.underlineHover:hover {
+  color: #0d0d0d;
+}
+
+.underlineHover:hover:after{
+  width: 100%;
+}
+
+
+/* OTHERS */
+
+*:focus {
+outline: none;
+}
+
+#icon {
+  width:17%;
+}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: black;
+}
+
+.topnav a {
+  float: left;
+  color: grey;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.topnav a:hover {
+  background-color: Grey;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #016A5C;
+  color: white;
+}
+<div class="container h-100">
+      <div class="d-flex justify-content-center h-100">
+        <div class="searchbar">
+          <input class="search_input" type="text" name="" placeholder="Search...">
+          <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+        </div>
+      </div>
+    </div>
+
+th, td {
+text-align: left;
+  padding: 5px;
+}
+th {
+  text-align: left;
+}
+
+.div1 {
+  width: 100px;
+  height: 40px;
+  border: 1px solid blue;
+}
+
+</style>
+</head>
+<body>
+<div class="topnav">
+<!--    Search bar cu filtre-->
+  <a class="active" href="/">Start Page</a>
+  <a href="/utilizatori">Utilizatori</a>
+<!--    Aici adaugam utilizatori sau stergem utilizatori de mana-->
+  <a href="/analize">Solicitare analiza</a>
+<!--    #rez analize + update analize + stergere analiza-->
+  <a href="/rezultat">Adaugare rezultat</a>
+<!--    # modificare informatii centre-->
+</div>
+
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+    <center>
+        <a href="/add_user" ><input type = "submit" class="fadeIn.first" name="add_user"   value="Adaugati client"></a>
+        <a href="/delete" ><input type="submit" class = "fadeIn.first" name="delete_user" value="Stergeti ultimul client vizualizat"></a>
+        <a href="/update" ><input type="submit" class = "fadeIn.first" name="update_user" value="Modificati date client"></a>
+</center>
+
+<center>
+<form method="POST" name ="Sign In"  action ="" style="color : white">
+    CNP <i ></i>
+    <br>
+    <input type="text"  name="cnp"  />
+    <br>
+
+    <label for="analiza" >Analiza:</label> <br>
+    <select id="analiza" name="analiza">
+    <option value="1">Analiza cardiaca</option>
+    <option value="2">Test COVID</option>
+    <option value="3">Glicemie</option>
+  </select>
+<br>
+     <label for="centru" >Centru:</label> <br>
+    <select id="centru" name="centru">
+    <option value="1">Brasov - Str. Sforii</option>
+    <option value="2">Pitesti - Str. Trandafirilor</option>
+    <option value="3">Bucuresti- Str. Preciziei</option>
+    <option value="4">Timis- Str. Bucuriei</option>
+    <option value="5">Iasi- Str. Teiului</option>
+  </select>
+
+    <br><br>
+    <input type = "submit">
+</form>
+ <p class="container">
+        <p align = "left">
+<table style="color : grey " class="table">
+            <tr>
+            <th>Nume</th>
+            <th>Prenume</th>
+            <th>CNP</th>
+            <th>Rezultat</th>
+            <th>Necesita refacere</th>
+            <th>Analiza</th>
+            <th>Durata procesare</th>
+            <th>Adresa Centru</th>
+            <tr>
+
+            {%for i in data %}
+            <tr>
+
+                <td >{{i.Nume}}</td>
+                <td>{{i.Prenume}}</td>
+                <td>{{i.CNP}}</td>
+                <td>{{i.Rezultat}}</td>
+                <td>{{i.Necesita_refacere}}</td>
+                <td>{{i.Descriere}}</td>
+                <td>{{i.Durata_procesare}}h</td>
+                <td>{{i.Oras}}, {{i.Judet}}, {{i.Strada}} {{i.Numar}}</td>
+            </tr>
+
+
+            {%endfor%}
+</table>
+
+
+
+</center>
+</div>
+</body>
+</html>
+
+
+
